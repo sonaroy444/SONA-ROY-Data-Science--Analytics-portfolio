@@ -1,7 +1,7 @@
 # Sona Roy | Data Science & Analytics Portfolio
 
-🔗 [LinkedIn](https://www.linkedin.com/in/sona-roy-070360280)  
-🆔 Certificate ID: XYADEJCA
+🔗 [LinkedIn](https://www.linkedin.com/in/sona-roy)  
+
 
 ---
 
