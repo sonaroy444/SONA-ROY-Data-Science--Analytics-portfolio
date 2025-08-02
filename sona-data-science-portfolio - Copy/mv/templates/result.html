@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e694d8; /* Dark background resembling a theater */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 40px; /* Increased padding for better spacing */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+            text-align: center;
+            width: 400px; /* Adjust width as needed */
+            max-width: 90%; /* Ensure it's responsive */
+            animation: backgroundFade 5s infinite alternate; /* Animation */
+        }
+
+        @keyframes backgroundFade {
+            0% {
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+            50% {
+                background-color: rgba(240, 240, 240, 0.9);
+            }
+            100% {
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px; /* Adjusted font size */
+        }
+
+        p {
+            font-size: 16px; /* Adjust font size of paragraphs */
+            margin-bottom: 10px; /* Adjust spacing between paragraphs */
+            color: #333; /* Darker color for better readability */
+        }
+
+        strong {
+            color: #008080; /* Teal color for emphasis */
+        }
+
+        .sentiment-positive {
+            color: #008000; /* Green color for positive sentiment */
+            font-weight: bold;
+        }
+
+        .sentiment-negative {
+            color: #ff0000; /* Red color for negative sentiment */
+            font-weight: bold;
+        }
+
+        .rating {
+            font-size: 18px; /* Adjust font size of rating */
+            color: #008080; /* Teal color for rating */
+            margin-top: 15px; /* Adjust spacing above rating */
+        }
+
+        a {
+            display: inline-block;
+            color: #fff;
+            background-color: #e6b800; /* Yellow color resembling a cinema ticket */
+            padding: 12px 24px; /* Increased padding */
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: #c49500; /* Darker yellow on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result-container">
+        <h1>Review Result</h1>
+        <p><strong>Movie Name:</strong> {{ movie_name }}</p>
+        <p><strong>Review:</strong> {{ review }}</p>
+        <p><strong>Sentiment:</strong>
+            {% if sentiment == 1 %}
+            <span class="sentiment-positive">Positive</span>
+            {% else %}
+            <span class="sentiment-negative">Negative</span>
+            {% endif %}
+        </p>
+        <p class="rating"><strong>Rating:</strong> {{ rating }}</p>
+        <a href="{{ url_for('aggregate_rating', movie_name=movie_name) }}">View Aggregate Rating</a>
+    </div>
+</body>
+
+</html>

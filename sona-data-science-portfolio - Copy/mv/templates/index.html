@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis and Rating</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        /* Additional Styling for Background Picture Animation */
+        @keyframes pictureAnimation {
+            0%, 100% {
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            position: relative;
+        }
+
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('static/4840788.webp');
+            background-position: center;
+            animation: pictureAnimation 6s infinite;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            padding: 50px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInUp 1s forwards;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            color: #ff9800;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="text"],
+        textarea {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 2px solid #ff9800;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 10px rgba(255, 152, 0, 0.5);
+        }
+
+        button {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 15px 20px;
+            border: 2px solid #ff9800;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff5722;
+        }
+
+        .filmstrip {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400%;
+            overflow: hidden;
+            animation: filmstripMove 10s infinite linear;
+            margin-top: -50px;
+        }
+
+        .filmstrip img {
+            width: 120px;
+            margin: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes filmstripMove {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+
+</style>
+</head>
+<body>
+    <div class="background-images"></div>
+    <div class="container">
+        <h1>Sentiment Analysis and Rating</h1>
+        <form method="post" action="\result.html">
+            <label for="movie_name">Movie Name:</label>
+            <input type="text" name="movie_name" placeholder="Enter the movie name" required>
+            <br>
+            <label for="review">Review:</label>
+            <textarea name="review" id="review" rows="4" placeholder="Write your review here" required></textarea>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="filmstrip">
+            <img src="static\img1.png.jpg" alt="Filmstrip 1">
+            <img src="static\img2.png.jpg" alt="Filmstrip 2">
+            <img src="static\img3.png.jpg" alt="Filmstrip 3">
+            <img src="static\joker-movie-4k-artwork-tm.jpg" alt="Filmstrip 5">
+            <img src="static\ready-or-not-5120x2600-soldier-military-black-background-4k-5k-19135.jpg" alt="Filmstrip 6">
+            <img src="static\wp2441207.jpg" alt="Filmstrip 7">
+            <img src="static\assassins_creed_odyssey_4k.jpg" alt="Filmstrip 8">
+          
+            <!-- Add more filmstrip images as needed -->
+        </div>
+    </div>
+</body>
+</html>
